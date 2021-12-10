@@ -24,7 +24,9 @@ int main(int argc, char **argv){
 	#pragma omp parallel
     {
 		#pragma omp single
-        result = fib(n);
+        for (int i = 0; i <= n; ++i) {
+            result = fib(i);
+            printf("%d: %d\n",i,  result);
+        }
     }
-    printf("Result is %d\n", result);
 }
